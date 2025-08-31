@@ -10,10 +10,10 @@ class Solution:
         def great(root, p, q):
             if (p.val <= root.val and q.val >= root.val) or (p.val >= root.val and q.val <= root.val):
                 return root
-            if p.val >= root.val and q.val >= root.val:
+            if p.val > root.val and q.val > root.val:
                 return great(root.right, p, q)
 
-            if p.val <= root.val and q.val <= root.val:
+            if p.val < root.val and q.val < root.val:
                 return great(root.left, p, q)
 
         return great(root, p, q)
